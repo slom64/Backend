@@ -1,0 +1,1 @@
+- deploy our generated artifact to any remote server, which could be also maven repository manager inside the compant network.

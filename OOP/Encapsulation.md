@@ -1,0 +1,2 @@
+- The idea of creating class with attributes and methods that maybe private or public.
+- Most of the times you will find that attributes will be private and methods are public.

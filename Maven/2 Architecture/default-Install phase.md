@@ -1,0 +1,1 @@
+- This phase install the generated .jar or artifact to the local repository `~/.m2/repository/SAME/PATH/AS/OUR/PROJECT`

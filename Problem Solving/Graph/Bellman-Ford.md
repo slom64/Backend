@@ -1,0 +1,8 @@
+- Limitiation: if there is cycle it should not have sum of negative
+- Input
+	- Weighted graph
+	- Edges lengths possible in negative
+	- source vertex
+- output
+	- Compute the shortest s-v path for all destination
+	- Output a negative cycle "execuse for failing to compute shortest path"

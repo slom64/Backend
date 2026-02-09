@@ -1,0 +1,2 @@
+- pre-made project structure that you can use to build above of it your application.
+- Its like class that is used to create objects, so you have predefined project structure you reuse it.

@@ -1,0 +1,2 @@
+- public method that has same name as class, get executed when we create an object of a class, and it doesn't have return type.
+- Even if you didn't define it, there we will be default constructor that doesn't do anything

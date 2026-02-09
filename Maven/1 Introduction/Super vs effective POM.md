@@ -1,0 +1,1 @@
+- when you create POM, it actually inherit default values from super POM. the resultant POM called effective pom

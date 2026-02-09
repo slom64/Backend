@@ -1,0 +1,2 @@
+- When class inherte other class it gets its attributes and methods.
+- Every child class has a `super` that points to the parent `public`, `protected` attributes and methods .

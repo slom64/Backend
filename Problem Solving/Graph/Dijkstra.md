@@ -1,0 +1,7 @@
+- SSSP, single source shortest
+- Input
+	- **Weighted** `Non-Negative`
+	- A source vertex
+- Output
+	- shortest path from source to all other vertices.
+	- Find minimum weight.
