@@ -1,0 +1,6 @@
+- We use in:
+	- When single method has multiple of aglorithms that can be used to reach the end goal.
+		- The "Multiple Algorithms" Scenario, This is the classic definition. You have **one goal** (e.g., `calculateTax()`), but the **how** changes based on the input (e.g., `EU_Tax`, `US_Tax`, `UK_Tax`).
+		- **The Benefit:** It keeps your code **Open/Closed**. You can add a `JapanTax` strategy without touching the existing, tested code of the other tax classes.
+	- It help us to achieve single responsibility principle, when we have multiple of methods that give different endgoals.
+		- The "**SRP Violation**" Scenario: This is where Strategy becomes a powerful refactoring tool. If you have a class with 10 different methods, and 5 of them are only there to support "Feature A" and the other 5 are for "Feature B".
