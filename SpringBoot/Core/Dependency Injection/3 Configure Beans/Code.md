@@ -4,7 +4,7 @@
 - We will use a class for configuration that contain one or methods for creating beans:
 	- `@Configuration`: Tells spring this class is source for bean definition.
 	- `@Bean`: Tells spring this is bean producer.
-- By default, Spring goes to every manged bean "@Component, @Service" and runs its construct which create an object. Even if we didn't use this class in our main code, spring will create the object and we won't use it. This is the **eager** behaviour, you can change it by using **@Lazy**.
+- By default, Spring goes to every manged bean "@Component, @Service" and runs its construct which create an object. Even if we didn't use this class in our main code, spring will create the object and we won't use it. This is the `eager` behaviour, you can change it by using `@Lazy`.
 	- When the class is marked as **lazy** it will be created only when we want.
 
 ```java

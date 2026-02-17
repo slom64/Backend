@@ -1,0 +1,18 @@
+- To work with Repostories interface we will use the one of the following interfaces
+	- `CrudRespository` interface
+	- `PagingAndSortingRepository` interface
+	- `JpaRepository` this interface extends the previous 2 interfaces
+
+> [!NOTE]
+> The actual implementations of those interfaces is set by springboot in runtime.
+
+---
+
+You can see the actual generated SQL statements by changing the `application.yaml`
+```yaml
+spring:
+	jpa:
+		show-sql: true
+```
+
+---

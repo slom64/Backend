@@ -2,6 +2,7 @@
 - This is the recommended way.
 
 ```java
+// Note: In those examples we didn't use IoC of spring, we just want to show how to do dependency.
 public class OrderService {  
     PaymentService paymentService;  
     public OrderService(PaymentService paymentService) {  
@@ -29,5 +30,5 @@ public static void main(String[] args) {
 	var orderService = new OrderService(new PayPalPaymentService());  
 	orderService.placeOrder();  
 }
-// Note: In those examples we didn't use IoC of spring, we just want to show how to do dependency.
+
 ```
