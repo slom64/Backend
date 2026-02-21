@@ -1,0 +1,1 @@
+- If resource doesn't exists then the status code should be 404. Example if you don't have user 5, then `api/users/5` should return 404 not found. 

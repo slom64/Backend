@@ -1,0 +1,14 @@
+```xml
+<dependency>
+	<groupId>org.mapstruct</groupId>
+	<artifactId>mapstruct</artifactId>
+	<version>1.6.3</version>
+	<scope>compile</scope>
+</dependency>
+<dependency>
+	<groupId>org.mapstruct</groupId>
+	<artifactId>mapstruct-processor</artifactId>
+	<version>1.6.3</version>
+	<scope>compile</scope>
+</dependency>
+```

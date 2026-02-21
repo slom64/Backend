@@ -1,0 +1,5 @@
+- Spring MVC its framework that is designed to build web applications.
+- MVC stands for `Model`, `View`, `Control` which is design pattern makes developing web applications much more easier.
+	- Model: Data + logic
+	- View: what the user sees
+	- Controller: Middle between View and Model
