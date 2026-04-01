@@ -5,6 +5,7 @@
 	- `@Controller`: Classes that can handle web requests.
 - If you have more than one constructor in the class, then you should use `@Autowired` annotation.
 
+---
 ### General Idea
 ```java
 @Service  
@@ -33,7 +34,10 @@ public static void main(String[] args) {
 }
 ```
 
+---
 ### AutoWired
+There is 2 use cases for this annotation:
+1. When we have multiple constructors and we want to specify which constructor to be used.
 ```java
 public class OrderService {  
     private PaymentService paymentService;
@@ -49,7 +53,16 @@ public class OrderService {
     }  
 }
 ```
-
+2. When we have dependeny field and we didn't put it in constructor arguments
+```java
+@Service  
+public class CashCardService {  
+  
+	@Autowired  
+	private CashCardRepository repository; //Here we didn't put the repository in constructor, so we need to tell spring to automatically inject dependancies.
+	// if we put @AllArgsConstructor then there is no need for @Autowired. 
+}
+```
 ---
 ### Multiple Beans
 
@@ -76,7 +89,7 @@ public class StripePaymentService implements PaymentService{
 }
 ```
 
-- You can solve this problem by using one of those annotations
+- You can solve this problem by using `@Configuration` class or use one of those annotations
 	- `@Primary`: This annotation define the default resource that should be used.
 	- `@Qualifier("name")`: You choose which bean should be used while creating the object. And it has periority over `@Primary`.
 

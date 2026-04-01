@@ -1,1 +1,3 @@
 - In one second you can do  $3*10^{7}$ operations.
+- Try to think with
+	- Two pointers tech

@@ -13,7 +13,7 @@ The short answer: If you want specific fields, you should use **Projections (Int
 
 
 > [!Summary]
-> `@EntityGraph` works well with projection for selecting specific columns, but with `@Query` it only work if you want to select all the columns and won't work if you want to select specific columns only.
+> `@EntityGraph` works well with projection for selecting specific columns, but with `@Query` it only work if you want to select all the columns, which won't work if you want to select specific columns only.
 
 ---
 

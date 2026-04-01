@@ -1,0 +1,1 @@
+- `@SpringBootTest` by default does NOT start an embedded server.  But `TestRestTemplate` requires a running server. so `@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)`

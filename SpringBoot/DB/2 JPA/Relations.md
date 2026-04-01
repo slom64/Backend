@@ -14,6 +14,10 @@
 
 ## Bidirectional vs Unidirectional
 
+> [!NOTE]
+> One-To-Many can be replaced with repository query instead of putting it in jpa entity. So instead of user.getOrders() use orderRepository.findByUserId(userId). 
+
+
 > [!Question]
 > choosing if it bidirectional or unidirectional isn't set by backend dev, its database creator responsability to do so... isn't?
 

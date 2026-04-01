@@ -13,8 +13,19 @@ stripe.enabled=true                 // boolean value
 stripe.apiUrl=https://api.strip.com // String value
 stripe.supported-currencies=USD,EUR,GBP
 ```
+### YAML
+```yaml
+spring:
+	application:
+		name: spring
+stripe:
+	enabled: true
+	apiUrl: https://api.stripe.com
+	supported-currencies: USD,EUR,GBP
+```
 
-### Usage
+---
+## Usage
 ```java
 @Value("${stripe-timeout:3000}") // Assign default value in case the configuration aren't present in application.properties
 private int stripeTimeout;
@@ -27,16 +38,4 @@ private boolean stripeEnabled;
 
 @Value("${stripe.supported-currencies}")
 List<String> supportedCurrencies;
-```
-
----
-## YAML
-```yaml
-spring:
-	application:
-		name: spring
-stripe:
-	enabled: true
-	apiUrl: https://api.stripe.com
-	supported-currencies: USD,EUR,GBP
 ```
