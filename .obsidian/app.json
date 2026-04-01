@@ -1,0 +1,20 @@
+{
+  "foldIndent": true,
+  "foldHeading": true,
+  "showIndentGuide": true,
+  "showLineNumber": false,
+  "readableLineLength": false,
+  "newFileLocation": "current",
+  "newFileFolderPath": "Assets/Images",
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "A4",
+    "landscape": true,
+    "margin": "1",
+    "downscalePercent": 100
+  },
+  "spellcheck": false,
+  "attachmentFolderPath": "Z Assets/Images",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false
+}

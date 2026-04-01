@@ -1,0 +1,277 @@
+{
+  "main": {
+    "id": "53de6954cdd87f19",
+    "type": "split",
+    "children": [
+      {
+        "id": "11496cfa0944a5f5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0db18ccd692baa32",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SpringBoot/Security/Classes/UserDetailsService.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "UserDetailsService"
+            }
+          },
+          {
+            "id": "e0efd2b3ec450bd9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SpringBoot/Security/1. Configuration.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "1. Configuration"
+            }
+          },
+          {
+            "id": "33f0e9c732d47cd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SpringBoot/Core/Dependency Injection/1. General Informations.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "1. General Informations"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8e069b618c5458cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "0afa6b923bf27ef2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "79bb53e617f949fa",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "fa12ffc36acde04f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "@Lazy",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "526e24e356603929",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 241.5086555480957
+  },
+  "right": {
+    "id": "9a114e1a1160d623",
+    "type": "split",
+    "children": [
+      {
+        "id": "8b72eab476da88fc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8a8ce1073f9d39a6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Vulnerabilities/XSS/Context/Between HTML tags.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Between HTML tags"
+            }
+          },
+          {
+            "id": "08caf14e318ba87d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Web/0 Understand/Same-origin policy (SOP).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Same-origin policy (SOP)"
+            }
+          },
+          {
+            "id": "5be76b30b33e6f2f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0e37790b8b139322",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "SpringBoot/Validation/1. Simple Validation.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 1. Simple Validation"
+            }
+          },
+          {
+            "id": "f801c17d25e10a4f",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 304.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "33f0e9c732d47cd6",
+  "lastOpenFiles": [
+    "SpringBoot/Core/Dependency Injection/3 Configure Beans/Code.md",
+    "SpringBoot/Core/Dependency Injection/1. General Informations.md",
+    "SpringBoot/Core/Dependency Injection/4. Bean LifeCycle.md",
+    "SpringBoot/Core/Dependency Injection/2 Dependency/Constructor Dependency.md",
+    "SpringBoot/Misc/External Configuration.md",
+    "SpringBoot/Core/Dependency Injection/3 Configure Beans/Annotations.md",
+    "SpringBoot/Core/Dependency Injection/2 Dependency/Setter Dependency.md",
+    "SpringBoot/Validation/2. Custom Validation.md",
+    "SpringBoot/Validation/3. Handle failed Validations.md",
+    "SpringBoot/Validation/4. Business Rules Validation.md",
+    "SpringBoot/Validation/pom.xml.md",
+    "SpringBoot/MVC/Notes.md",
+    "SpringBoot/MVC/RestFull Convention.md",
+    "SpringBoot/Validation/1. Simple Validation.md",
+    "SpringBoot/Security/Roles/Basic Roles.md",
+    "SpringBoot/Security/JWT/dependencies.md",
+    "SpringBoot/Security/Overview.md",
+    "SpringBoot/Security/1. Configuration.md",
+    "SpringBoot/Security/Classes/UserDetailsService.md",
+    "SpringBoot/Security/Classes/UserDetails.md",
+    "SpringBoot/pom.xml.md",
+    "SpringBoot/Security/Understand/Roles.md",
+    "SpringBoot/Security/Understand/General.md",
+    "SpringBoot/Security/Classes/AuthenticationManager.md",
+    "SpringBoot/Security/Classes/Authentication.md",
+    "SpringBoot/Validation/0. Notes.md",
+    "SpringBoot/Validation",
+    "Projects/ecommerce",
+    "Projects",
+    "Problem Solving/DP",
+    "Problem Solving/Range Queries",
+    "Problem Solving/Graph/MST",
+    "Problem Solving/Number Theory/Sum",
+    "Problem Solving/Number Theory/Combinations & Perm",
+    "SpringBoot/Security/Roles",
+    "SpringBoot/Security/Filters",
+    "Z Assets/Images/Pasted image 20260224225057.jpeg",
+    "Z Assets/Images/Pasted image 20260204213302.jpeg",
+    "Z Assets/Images/Pasted image 20260224225057.png",
+    "Z Assets/Images/Pasted image 20260204213302.png",
+    "Z Assets/Images/Pasted image 20260204183219.jpeg",
+    "Z Assets/Images/Pasted image 20260204183219.png",
+    "Z Assets/Images/Pasted image 20260204182751.png",
+    "Z Assets/Images/Pasted image 20260204182709.jpeg",
+    "Z Assets/Images/Pasted image 20260204182709.png",
+    "Z Assets/Images/Pasted image 20260122000531.jpeg",
+    "Web/Web Cache/Poisoning/Untitled.canvas",
+    "Active Directory/9 NTLM Rely/Untitled.canvas",
+    "Untitled.canvas",
+    "HTB/linux/easy/Untitled.canvas",
+    "Z Assets/Templates/Labs/Lab 2 - Vuln. Research/OpenCart 4.0.2.3.canvas",
+    "Z Assets/Templates/Labs/Lab 1 - Example/LAB 1.canvas",
+    "Templates/Labs/Lab 2 - Vuln. Research/OpenCart 4.0.2.3.canvas",
+    "Templates/Labs/Lab 1 - Example/LAB 1.canvas",
+    "obsidian-template/Labs/Lab 2 - Vuln. Research/OpenCart 4.0.2.3.canvas",
+    "obsidian-template/Labs/Lab 1 - Example/LAB 1.canvas"
+  ]
+}
