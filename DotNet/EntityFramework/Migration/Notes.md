@@ -1,0 +1,1 @@
+- If you want to do any custom changes you can use `Sql()` method to run raw sql statements.

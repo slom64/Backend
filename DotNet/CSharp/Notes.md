@@ -1,0 +1,1 @@
+- set of classes called namaspaces, the set of namespaces called Assembly (DLL or EXE). applications use one or more Assemblies. 

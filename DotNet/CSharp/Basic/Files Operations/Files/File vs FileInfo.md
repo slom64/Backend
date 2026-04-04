@@ -1,0 +1,2 @@
+- **File** provides static methods, but **FileInfo** provides instance methods "Object".
+- If you have small number of operations then use **File** because operating system do some security checks on authorization to access the file and those checks happen for each method call, but if you used **FileInfo** it will check once

@@ -1,0 +1,2 @@
+- delegate is just datatype that can point to one or more methods, and by executing a delegate we execute all insider methods that have been added to it.
+- You can do the same funtion using interfaces.
