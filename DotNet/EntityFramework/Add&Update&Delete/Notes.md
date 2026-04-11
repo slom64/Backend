@@ -1,0 +1,2 @@
+- **Change Tracker**: Responsible for keeping track of the state of objects in DbContext. Any change in Any object will flag the object as **Changed**
+	- When we change the state of the object by Updating or deleting or adding one, it doesn't reflect changings directly to the database. When need to call `SaveChanges()`. Then the **Change Tracker** mark objects as **UnChanged**.

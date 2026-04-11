@@ -1,0 +1,1 @@
+- We use repositories to reduce code redundancy.

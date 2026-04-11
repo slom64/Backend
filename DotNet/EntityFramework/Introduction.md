@@ -6,15 +6,7 @@
 
 
 ```xml
-<!--Things to download -->
-install-package EntityFramework
-
-// edit App.config
 <connectionStrings>
 	<add name="DbContextClass" connectionString="data source=.\SQLEXPRESS; initial catalog=DataBaseName; integrated security=SSPI" providerName="System.Data.SqlClient"/>
 </connectionStrings>
-
-<!-- Enable code migration for database "We do it only once"-->
-enable-migrations
-
 ```
