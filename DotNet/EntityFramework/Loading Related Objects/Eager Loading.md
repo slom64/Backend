@@ -1,5 +1,4 @@
 - Eager loading solves **N+1** problem of lazy loading. 
-- Be careful when using Eager loading, if you have **ToString** or **Serialization** methods, in both objects that may make `infinite loop`
 
 > [!danger]
 > Be carful when using `ToString()` or `Serialization` methods. Because they may make `infinite loop` when using **eager loading**.

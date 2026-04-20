@@ -110,18 +110,11 @@ Support both **logged-in** (persistent) and **guest** (cart token in header/cook
 
 Start with a simple mock service; later integrate Stripe Java SDK.
 
-#### 7. Discounts / Promotions (Shopify Price Rules style)
-| Method | Endpoint                       | What it does                                                 | Auth   |
-| ------ | ------------------------------ | ------------------------------------------------------------ | ------ |
-| POST   | `/admin/discounts`             | Create discount (percentage/fixed, code, expiry, min amount) | Admin  |
-| GET    | `/admin/discounts`             | List discounts                                               | Admin  |
-| GET    | `/discounts/validate?code=XXX` | Validate code (used in cart)                                 | Public |
-
-#### 8. Shipping & Taxes (Basic version)
+#### 7. Shipping & Taxes (Basic version)
 - GET `/shipping/rates` → calculate rates based on address + cart weight/items (mock or use external API later)
 - Taxes calculated automatically in checkout (use simple rules or TaxJar later)
 
-#### 9. Analytics / Reports (Admin)
+#### 8. Analytics / Reports (Admin)
 | Method | Endpoint                   | What it does                       |
 | ------ | -------------------------- | ---------------------------------- |
 | GET    | `/admin/reports/sales`     | Total sales, by period, by product |

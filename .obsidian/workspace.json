@@ -28,13 +28,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SpringBoot/Security/1. Configuration.md",
+                "file": "Projects/ecommerce/API doc.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "1. Configuration"
+              "title": "API doc"
+            }
+          },
+          {
+            "id": "975db7103d2b75af",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DotNet/MVC/Controller/Query String Parameters.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Query String Parameters"
+            }
+          },
+          {
+            "id": "9a8b21df71725cef",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Projects/ecommerce/Interfaces/AddProduct.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "AddProduct"
             }
           },
           {
@@ -43,25 +70,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DotNet/Security/Security OverView.md",
+                "file": "DotNet/EntityFramework/Setup/Files.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Security OverView"
-            }
-          },
-          {
-            "id": "24186e72c73905c0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Z Assets/Images/Pasted image 20260224225057.jpeg"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260224225057"
+              "title": "Files"
             }
           }
         ],
@@ -97,7 +112,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "spring security",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -227,54 +242,55 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "33f0e9c732d47cd6",
+  "active": "975db7103d2b75af",
   "lastOpenFiles": [
-    "DotNet/Security/Hashing.md",
-    "DotNet/Security/Security OverView.md",
-    "SpringBoot/Security/Overview.md",
-    "DotNet/DI/asdf.asdf.md",
-    "Z Assets/Images/Pasted image 20260224225057.jpeg",
-    "SpringBoot/Security/Understand/General.md",
-    "DotNet/EntityFramework/Migration/Notes.md",
-    "DotNet/EntityFramework/Migration/SetUp.md",
-    "DotNet/EntityFramework/Migration/Renaming Column.md",
-    "DotNet/DI/Registering Dependencies.md",
-    "DotNet/Security/Password/Varification.md",
-    "DotNet/DI",
-    "DotNet/Security/JWT/Generation.md",
-    "DotNet/Structure.md",
-    "DotNet/EntityFramework/Setup/Files.md",
-    "DotNet/EntityFramework/Repository/Notes.md",
-    "DotNet/EntityFramework/Introduction.md",
-    "DotNet/EntityFramework/LINQ/LINQ.md",
-    "DotNet/EntityFramework/Loading Related Objects/Eager Loading.md",
-    "DotNet/EntityFramework/Setup/Downloads.md",
-    "DotNet/Security/Password",
-    "DotNet/Security/JWT",
-    "DotNet/Security",
-    "DB/SQLServer/Update Tables.md",
-    "DotNet/MVC/Controller/Return Type.md",
-    "DB/SQLServer",
-    "DotNet/MVC/Controller",
-    "DotNet/MVC",
-    "DotNet/EntityFramework/Add&Update&Delete/Delete.md",
-    "DotNet/EntityFramework/Repository",
+    "DotNet/EntityFramework/Misc/Mapper/Mapper.md",
+    "Projects/ecommerce/API doc.md",
+    "Projects/ecommerce/Interfaces/AddProduct.md",
     "DotNet/EntityFramework/Add&Update&Delete/Update.md",
+    "Projects/ecommerce/Interfaces/Products.md",
+    "DotNet/MVC/Controller/Put vs Patch.md",
+    "DotNet/MVC/Services/Services.md",
+    "DotNet/MVC/Services/Untitled.md",
+    "DotNet/MVC/Controller/Query String Parameters.md",
+    "DotNet/MVC/Services",
+    "DotNet/MVC/Controller/Return Type.md",
+    "Z Assets/Images/Pasted Image 20260416191807_532.png",
+    "Z Assets/Images/Pasted Image 20260416191727_581.png",
+    "Z Assets/Images/Pasted Image 20260416191641_910.png",
+    "Z Assets/Images/Pasted Image 20260416191624_964.png",
+    "Z Assets/Images/Pasted Image 20260416191610_408.png",
+    "Z Assets/Images/Pasted Image 20260416191542_351.png",
+    "Projects/ecommerce/Interfaces/Untitled.canvas",
+    "DotNet/Validation/FluentValidation/Validation.md",
+    "Projects/ecommerce/Interfaces",
+    "ToDo.md",
+    "DotNet/Validation/FluentValidation",
+    "DotNet/Validation",
+    "Best Practice.md",
+    "DotNet/EntityFramework/LINQ/LINQ ExtensionMethods.md",
+    "DotNet/EntityFramework/LINQ/LINQ.md",
+    "DotNet/EntityFramework/Misc/DTO/DTO.md",
+    "DotNet/EntityFramework/Misc/DTO",
     "DotNet/EntityFramework/Add&Update&Delete/Add.md",
+    "DotNet/EntityFramework/Add&Update&Delete/Delete.md",
     "DotNet/EntityFramework/Add&Update&Delete/Notes.md",
-    "DotNet/EntityFramework/Add&Update&Delete",
-    "DotNet/EntityFramework/Loading Related Objects/Lazy Loading.md",
-    "DotNet/EntityFramework/Loading Related Objects/N+1 Problem.md",
-    "DotNet/EntityFramework/Loading Related Objects",
+    "DotNet/Security/Implementations/Access Claims.md",
+    "DotNet/Security/Implementations/Login.md",
+    "DotNet/Structure.md",
+    "DotNet/Security/Implementations/Register.md",
+    "DotNet/Security/JWT/Generation.md",
+    "DotNet/Security/Password/Varification.md",
+    "DotNet/Security/Implementations/ServiceResponse.md",
+    "DotNet/EntityFramework/Misc/Mapper",
+    "DotNet/EntityFramework/Misc",
+    "Z Assets/Images/Pasted image 20260224225057.jpeg",
+    "DotNet/Security/Implementations",
+    "DotNet/DI",
+    "DotNet/Security/Password",
     "Z Assets/Images/Pasted image 20260204213302.jpeg",
     "Z Assets/Images/Pasted image 20260224225057.png",
     "Z Assets/Images/Pasted image 20260204213302.png",
-    "Z Assets/Images/Pasted image 20260204183219.jpeg",
-    "Z Assets/Images/Pasted image 20260204183219.png",
-    "Z Assets/Images/Pasted image 20260204182751.png",
-    "Z Assets/Images/Pasted image 20260204182709.jpeg",
-    "Z Assets/Images/Pasted image 20260204182709.png",
-    "Z Assets/Images/Pasted image 20260122000531.jpeg",
     "Web/Web Cache/Poisoning/Untitled.canvas",
     "Active Directory/9 NTLM Rely/Untitled.canvas",
     "Untitled.canvas",
@@ -283,7 +299,6 @@
     "Z Assets/Templates/Labs/Lab 1 - Example/LAB 1.canvas",
     "Templates/Labs/Lab 2 - Vuln. Research/OpenCart 4.0.2.3.canvas",
     "Templates/Labs/Lab 1 - Example/LAB 1.canvas",
-    "obsidian-template/Labs/Lab 2 - Vuln. Research/OpenCart 4.0.2.3.canvas",
-    "obsidian-template/Labs/Lab 1 - Example/LAB 1.canvas"
+    "obsidian-template/Labs/Lab 2 - Vuln. Research/OpenCart 4.0.2.3.canvas"
   ]
 }
