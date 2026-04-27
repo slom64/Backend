@@ -50,6 +50,10 @@ CreateMap<ProfileAddressDto, Address>()
 ```
 
 More complex
+
+> [!warning]
+> If you used AfterMap, it will break your logic when use `.ProjectTo()`. Try as hard you can to keep using `ForMember()`. If you can't, do mapping using constructor of the classes.
+
 ```csharp
 CreateMap<ProductProfileDto, Product>()
     .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ProductName))
@@ -79,6 +83,35 @@ CreateMap<ProductProfileDto, Product>()
     });
 ```
 
+### Projection
+- In complex dtos, we will fail to use naive mapper with projection.
+- Put it in `Dto` which is better than putting it in `mapper`.
+```csharp
+public class ProductProfileDto
+{
+    // ... properties ...
+
+    public static Expression<Func<Product, ProductProfileDto>> Projection =>
+        product => new ProductProfileDto
+        {
+            ProductName = product.Name,
+            Description = product.Description,
+            BasePrice = product.BasePrice,
+            SizeVariants = product.Variants
+                .Where(v => v.Size != null)
+                .Select(v => v.Size!)
+                .ToList(),
+            // ... rest of your mapping ...
+        };
+}
+
+// Usage
+var product = await _context.Product
+        .AsNoTracking()
+        .Where(p => p.Id == productId)
+        .Select(ProductProfileDto.Projection) // EF Core translates this to SQL
+        .FirstOrDefaultAsync();
+```
 
 ---
 ## Usage
@@ -101,4 +134,11 @@ _mapper.Map<Product>(dto);
 
 // Copy value from object to other one.
 _mapper.Map(dto, existingProduct);
+
+// In Custom Select statment 
+var productDto = await _context.Product
+        .AsNoTracking()
+        .Where(p => p.Id == productId)
+        .ProjectTo<ProductProfileDto>(_mapper.ConfigurationProvider) // Magic happens here
+        .FirstOrDefaultAsync();
 ```

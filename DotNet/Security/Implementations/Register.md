@@ -1,29 +1,13 @@
 ```csharp
-//services
-builder.Services.AddIdentity<User, IdentityRole>(options =>
-{
-	options.SignIn.RequireConfirmedAccount = true;
-})
-	.AddEntityFrameworkStores<ApplicationDbContext>()
-	.AddDefaultTokenProviders();
-///// context
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
-    : IdentityDbContext<User,IdentityRole,string>(options)
-{
-	 public DbSet<User> User { get; set; }
-}
-/// Logic
-
 public class AuthService(ApplicationDbContext context,
 	 IConfiguration configuration, UserManager<User> userManager) : IAuthService
 {
 	public async Task<ServiceResponse<User>> RegisterAsync(EmailPasswordDto emailPasswordDTO)
 	{
-
+		
 		// If the email is already used return null.
 		if (await userManager.FindByEmailAsync(emailPasswordDTO.Email) != null)
 			return ServiceResponse<User>.Failure(new List<string>() { "Email is already in use" });
-		
 		// Use transactions
 		using var transaction = await context.Database.BeginTransactionAsync();
 		try {
@@ -33,7 +17,7 @@ public class AuthService(ApplicationDbContext context,
 				UserName = emailPasswordDTO.Email
 			};
 			var result = await userManager.CreateAsync(user, emailPasswordDTO.Password);
-
+			
 			// Failed to create the User and password in database
 			if (!result.Succeeded)
 			{

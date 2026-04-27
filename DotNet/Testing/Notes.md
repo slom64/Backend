@@ -1,0 +1,5 @@
+- In unit test, you shouldn't use database, instead you can make "fake" in memory database that mokes the real database.
+	- For each test you run. xUnit creates a **new instance** of the class for every single `[Fact]`, meaning the constructor runs again, so we create new DB connection each test. which mean we get new fresh database. and when we finish from the test it get erased.
+	- You want iniatial data to be in the database, you can use **seed method**, Each test will get its own _copy_ of that seed data, but they still won't see each other's changes.
+	- If you used **In memory database** you don't have to fake objects and return values of `repositories` or `DbContext`. You can use them direct.
+- You can't unit test static functions.

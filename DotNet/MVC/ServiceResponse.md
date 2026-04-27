@@ -1,3 +1,4 @@
+- You shouldn't use this, instead use `Exceptions`.
 - Use this to have better communction between services and controllers.
 ```csharp
 public class ServiceResponse<T>
