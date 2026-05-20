@@ -88,8 +88,6 @@ Support both **logged-in** (persistent) and **guest** (cart token in header/cook
 | POST   | `/cart/items`          | Add item `{productId, variantId, quantity}`           |
 | PUT    | `/cart/items/{itemId}` | Update quantity                                       |
 | DELETE | `/cart/items/{itemId}` | Remove item                                           |
-| DELETE | `/cart`                | Clear cart                                            |
-| POST   | `/cart/apply-discount` | Apply coupon code (validate + recalculate)            |
 
 #### 5. Orders & Checkout (Core Shopify flow)
 | Method | Endpoint                     | What it does                                                                                | Auth  |
@@ -104,11 +102,14 @@ Support both **logged-in** (persistent) and **guest** (cart token in header/cook
 | POST   | `/admin/orders/{id}/cancel`  | Cancel + refund logic                                                                       | Admin |
 
 #### 6. Payments (Mock first, then real)
-- POST `/payments/create-intent` → returns Stripe/PayPal-like intent (or mock)
-- POST `/payments/webhook` (Stripe webhook endpoint for success/failure)
-- GET `/admin/payments` (for reports)
 
-Start with a simple mock service; later integrate Stripe Java SDK.
+| Method | Endpoint                                | What it does                                               |
+| ------ | --------------------------------------- | ---------------------------------------------------------- |
+| GET    | `/user/{userId}/checkout`               | Shows cart and address options before actual payment       |
+| POST   | `/user/{userId}/order/`                 | Create order and intention in paymob.                      |
+| POST   | `/user/{userId}/order/{orderId}/repay`  | Repay failed payment flow of order                         |
+| POST   | `/user/{userId}/order/{orderId}/refund` |                                                            |
+| POST   | `/paymob-payment-hook`                  | Called by paymob to tell us what happend in order payment. |
 
 #### 7. Shipping & Taxes (Basic version)
 - GET `/shipping/rates` → calculate rates based on address + cart weight/items (mock or use external API later)
@@ -153,3 +154,46 @@ Start with a simple mock service; later integrate Stripe Java SDK.
 - Generate the project on start.spring.io
 - Add Swagger and test the first `/admin/products` endpoint
 - Use Postman collection to document everything
+
+---
+
+| Field               | Value               |
+| ------------------- | ------------------- |
+| **Card Number**     | 5123 4567 8901 2346 |
+| **Cardholder Name** | Test Account        |
+| **Expiry Month**    | 01                  |
+| **Expiry Year**     | 39                  |
+| **CVV**             | 123                 |
+
+```
+4000000000000002
+
+```
+
+---
+
+> [!NOTE]
+> Don't forget to remove the wrong Uri paths of verify-email and forget-password, and frontend domain.
+
+
+```
+i have product management apis. admin can add,update,delete products and their images "each product can have multiple images" and products size and weights and products colors and thier colors image varaint "each color has 1 image". i have tried to do some of the frontend, so firstly the admin will enter basic product info like name, description, price "i have did this", but then after the product is created, he should be redirected to "update product page" which inside of it we can do more things in the product. there should be section for adding and deleting product images, the images order matters so try to find a way to represent the images order "there is api for update the order of product images" then there should be section to add size, so he press on + or add size which shows Modal/Modal Window we should enter the size that we want to add "this can be list of valid sizes or any proper solution you see" and the weight of this size. and there should be section for adding color variants when admin try to add new color a Modal/Modal Window shows up, admin should enter color name, and color hex "Color Picker, find nice way to do it". then after press add there should be table that show the color name and hex and color image, inside this table we will be able to change the color image we can add or delete it, for both color and size variant there should be  Toggle Switch, which update the variant status between enable and disable. read ProductCommandService.cs and ProductCommandController.cs for full understanding
+```
+
+```
+For collections. they can have the same displayOrder, when that happen we start to display based on name of collection.
+I have added also maintenance mode, which block users from checkout, or proceed in payment flow, so when we this mode is enabled i should show to users that the website is currently under maintenance.
+```
+
+```
+While user is putting his shipping address and billing address, i want to put switch that user will toggle if the billing address is not as shipping address when that happen there will be the default address of the user and "Choose another address" which user can choose from his address catalog and there should be button to add another address. This structure of having default address then address list should be also in shipping address.
+```
+
+
+```
+I have added search for user by email function which will be used by admin to search for guessing the user email, after he find the right user, we will display the orders of this user only. don't trigger this API call on _every single keystroke_. Implement a **debounce** of about 300ms. This waits until the admin pauses typing before hammering your database with requests.
+```
+
+```
+I have added reorder function, PutOrderInCart in ~/api/user/{userId}/order/{OrderId}/reorder which add order products in cart and the frontend should redirect user to cart. Admin may have made changes in database so for some products users won't be able to reorder, so if that happen i want to show for users after redirection a small notification message that says some order aren't avaible.
+```

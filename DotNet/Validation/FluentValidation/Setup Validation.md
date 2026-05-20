@@ -7,6 +7,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 ```
 ---
 
+
 ### 1. Define the Validator
 
 First, create a dedicated class for your DTO. This is where you define your custom rules.
@@ -70,3 +71,5 @@ public class ProfileService : IProfileService
     }
 }
 ```
+
+---

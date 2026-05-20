@@ -1,55 +1,62 @@
-	- put it next to `DTO` directory.
+### Setup
+1. put it next to `DTO` directory.
 ```csharp
 dotnet add package AutoMapper
 ```
-
-Add service.
+2. Add service.
 ```csharp
-builder.Services.AddAutoMapper(cfg => {
-}, AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(cfg => {}, AppDomain.CurrentDomain.GetAssemblies());
 ```
 
 ---
+### Notes
+- If you have childDto and parentDto "Like Address And User". if you defind the childDto mapping, then automapper will automatically map it for you in parentDto.
 
+
+---
+### Templates
 ```csharp
 public class ProfileAddressMapper : Profile
 {
 	public ProfileAddressMapper()
 	{
-		// for complex mapping.
 		CreateMap<User, ProfileAddressDto>()
-		.ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.Address.Country))
-		.ForMember(dest => dest.City, opt => opt.MapFrom(src => src.Address.City))
-		.ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Address.Description))
-		.ForMember(dest => dest.ZipCode, opt => opt.MapFrom(src => src.Address.ZipCode));
-		
-		// If the source has null value, then don't take it.
-		// src  => The source object	    { Street: "123 Main St", City: "Boston" }
-		// dest => The destination object 	{ Address: null, Name: "John" }
-		// srcMember => The actual value of the source property being mapped  ->  "123 Main St" or null
-		// in .ForAllMembers its best not to use src only, because you can use it for one-to-one interaction with specific property.
-		CreateMap<ProfileAddressDto, User>()
-			.ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
-
-		CreateMap<ProfileAddressDto, Address>()
-			.ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+			.ForMember(dest => dest.Id, opt => opt.MapFrom(_ => Guid.NewGuid())) // Setting new guid.
+			
+			// if CreateMap<ChildClass, ChildClassDto>  you can do ->
+			.ForMember(dest => dest.ChildClassDto, opt => opt.MapFrom(src => src.ChildClass));
 	}
 }
 ```
 
+---
 
-Ignore null values keep them as they are.
+### Ignore null values
+- Note that `bool?` is actually an object that has property that may point at null. so `srcMember != null` alone will fail
 ```csharp
+// This work in update dto, but it will do unwanted includes if you used it in Projection<>
+.ForAllMembers(opts => opts.Condition((src, dest, srcMember) => 
+	src.GetType().GetProperty(opts.DestinationMember.Name)?.GetValue(src) != null));
 
- 
+// this may fail if you have bool? or int?
 CreateMap<ProfileAddressDto, User>()
-    .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
-
-CreateMap<ProfileAddressDto, Address>()
-    .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+    .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null)); 
 ```
 
-More complex
+
+### Projection
+- In complex dtos, we will fail to use naive mapper with projection.
+- Put it in `Dto` which is better than putting it in `mapper`.
+```csharp
+var product = await _context.Product
+        .AsNoTracking()
+        .Where(p => p.Id == productId)
+        .ProjectTo<UserDto>(_mapper.ConfigurationProvider) // EF Core translates this to SQL
+        .FirstOrDefaultAsync();
+```
+
+---
+### AfterMap
 
 > [!warning]
 > If you used AfterMap, it will break your logic when use `.ProjectTo()`. Try as hard you can to keep using `ForMember()`. If you can't, do mapping using constructor of the classes.
@@ -83,35 +90,6 @@ CreateMap<ProductProfileDto, Product>()
     });
 ```
 
-### Projection
-- In complex dtos, we will fail to use naive mapper with projection.
-- Put it in `Dto` which is better than putting it in `mapper`.
-```csharp
-public class ProductProfileDto
-{
-    // ... properties ...
-
-    public static Expression<Func<Product, ProductProfileDto>> Projection =>
-        product => new ProductProfileDto
-        {
-            ProductName = product.Name,
-            Description = product.Description,
-            BasePrice = product.BasePrice,
-            SizeVariants = product.Variants
-                .Where(v => v.Size != null)
-                .Select(v => v.Size!)
-                .ToList(),
-            // ... rest of your mapping ...
-        };
-}
-
-// Usage
-var product = await _context.Product
-        .AsNoTracking()
-        .Where(p => p.Id == productId)
-        .Select(ProductProfileDto.Projection) // EF Core translates this to SQL
-        .FirstOrDefaultAsync();
-```
 
 ---
 ## Usage
