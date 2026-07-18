@@ -41,15 +41,12 @@
             "id": "33f0e9c732d47cd6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "DotNet/MVC/Services/Services.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "file": "Z Assets/Drawing 2026-01-31 18.30.38.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "Services"
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-01-31 18.30.38.excalidraw"
             }
           },
           {
@@ -58,32 +55,39 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DotNet/Validation/FluentValidation/Validation in csharp.md",
+                "file": "Misc/Hosting.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Validation in csharp"
+              "title": "Hosting"
             }
           },
           {
-            "id": "975db7103d2b75af",
+            "id": "fd302f8d5b79d476",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Projects/ecommerce/API doc.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "API doc"
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "0e749bea479d855b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Z Assets/Images/Pasted Image 20260416191807_532.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted Image 20260416191807_532"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -115,10 +119,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "validation",
+                "query": "Pasted Image 20260604102128_747.png",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": true,
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -224,12 +228,11 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 304.5,
-    "collapsed": true
+    "width": 304.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -242,40 +245,45 @@
       "command-palette:Open command palette": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0db18ccd692baa32",
+  "active": "0e749bea479d855b",
   "lastOpenFiles": [
-    "DotNet/Validation/FluentValidation/Setup Validation.md",
+    "Z Assets/Images/Pasted Image 20260604102128_747.png",
+    "Z Assets/Images/Pasted image 20260204182709.jpeg",
+    "SpringBoot/Security/Overview.md",
+    "Z Assets/Excalidraw/Drawing 2026-07-13 17.32.25.excalidraw.md",
+    "ToDo.md",
+    "Untitled.base",
+    "Problem Solving/DP/Dp Approaches.md",
+    "Problem Solving/DP/Memorization to Tabulation.md",
+    "DB/Product Variants.md",
+    "Z Assets/Excalidraw/Drawing 2026-05-03 21.07.03.excalidraw.md",
+    "Z Assets/Drawing 2026-01-31 18.30.38.excalidraw.md",
+    "Projects/ecommerce/API doc.md",
+    "MyNotes",
+    "Projects/ecommerce/Untitled.md",
+    "DotNet/EntityFramework/Misc/Mapper/Mapper.md",
+    "Misc/Hosting.md",
+    "DotNet/EntityFramework/Add&Update&Delete/Update.md",
     "DotNet/Validation/FluentValidation/Validation in csharp.md",
     "DotNet/MVC/Services/Services.md",
-    "DotNet/EntityFramework/Add&Update&Delete/Update.md",
-    "DotNet/EntityFramework/Misc/Mapper/Mapper.md",
-    "Projects/ecommerce/API doc.md",
-    "SpringBoot/Security/Classes/UserDetailsService.md",
-    "DotNet/EntityFramework/FluentAPI/2. Relationships.md",
-    "DotNet/EntityFramework/Loading Related Objects/N+1 Problem.md",
-    "DotNet/EntityFramework/Loading Related Objects/Lazy Loading.md",
-    "DotNet/EntityFramework/Loading Related Objects/Eager Loading.md",
-    "DotNet/EntityFramework/Repository/Notes.md",
-    "ToDo.md",
-    "Untitled.md",
-    "Projects/ecommerce/Interfaces/AddProduct.md",
-    "Misc/Hosting.md",
-    "DotNet/EntityFramework/Add&Update&Delete/Delete.md",
-    "DotNet/EntityFramework/Migration/Notes.md",
-    "Z Assets/Excalidraw/Drawing 2026-05-03 22.27.11.excalidraw.md",
+    "Problem Solving/Graph/MST/MST.md",
     "Z Assets/Excalidraw/Untitled.base",
-    "Z Assets/Excalidraw/Drawing 2026-05-03 21.07.03.excalidraw.md",
+    "Z Assets/Excalidraw/Drawing 2026-06-02 09.11.54.excalidraw.md",
+    "Problem Solving/Graph/MST/Prim's.md",
+    "Problem Solving/Graph/BFS.md",
+    "Problem Solving/Graph/Bellman-Ford.md",
+    "Problem Solving/Graph/DFS.md",
+    "Problem Solving/Graph/Dijkstra.md",
+    "Problem Solving/Graph/Notes.md",
+    "DotNet/CSharp/Advance/Hash/Hashable Class.md",
+    "DotNet/CSharp/Advance/Hash",
+    "DotNet/EntityFramework/FluentAPI/2. Relationships.md",
     "Frontend/Angular",
     "Frontend",
-    "DotNet/EntityFramework/Setup/Files.md",
-    "DotNet/Security/Implementations/Access Claims.md",
-    "DotNet/Security/Implementations/Register.md",
-    "DotNet/Security/Authorization/Policy.md",
-    "DotNet/Security/SetUp.md",
-    "DotNet/Security/Authorization/Roles.md",
     "DotNet/Security/Authorization",
     "DotNet/Testing/Fake",
     "DotNet/Testing",
@@ -287,13 +295,9 @@
     "Z Assets/Images/Pasted Image 20260416191610_408.png",
     "Z Assets/Images/Pasted Image 20260416191542_351.png",
     "Projects/ecommerce/Interfaces/Untitled.canvas",
-    "Projects/ecommerce/Interfaces",
-    "DotNet/Validation/FluentValidation",
-    "DotNet/Validation",
     "Z Assets/Images/Pasted image 20260224225057.jpeg",
     "Z Assets/Images/Pasted image 20260204213302.jpeg",
     "Z Assets/Images/Pasted image 20260224225057.png",
-    "Z Assets/Images/Pasted image 20260204213302.png",
     "Web/Web Cache/Poisoning/Untitled.canvas",
     "Active Directory/9 NTLM Rely/Untitled.canvas",
     "Untitled.canvas",

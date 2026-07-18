@@ -122,38 +122,6 @@ Support both **logged-in** (persistent) and **guest** (cart token in header/cook
 | GET    | `/admin/reports/orders`    | Order stats + top products         |
 | GET    | `/admin/reports/inventory` | Low-stock alerts                   |
 
----
-### Implementation Tips (Step-by-Step for Practice)
-1. **Start small** (MVP in 1-2 weeks):
-   - Auth + User
-   - Product CRUD + images (admin + public list)
-   - Basic catalog search/filter
-
-2. **Next**:
-   - Cart + Order placement (with transactions!)
-
-3. **Then**:
-   - Variants + inventory
-   - Discounts + checkout flow
-
-4. **Advanced** (to reach "most Shopify features"):
-   - Fulfillment & status updates
-   - Reports
-   - Webhooks (order created, payment success)
-   - Soft deletes, audit logs, rate limiting
-
-5. **Best practices**:
-   - Use **Service + Repository** layers
-   - Global exception handler + custom error responses
-   - `@Transactional` on order/checkout
-   - Event listeners (e.g., order placed → send email via Spring Mail or RabbitMQ later)
-   - Version your API (`/api/v1`)
-
----
-### Next Steps
-- Generate the project on start.spring.io
-- Add Swagger and test the first `/admin/products` endpoint
-- Use Postman collection to document everything
 
 ---
 
@@ -176,24 +144,131 @@ Support both **logged-in** (persistent) and **guest** (cart token in header/cook
 > Don't forget to remove the wrong Uri paths of verify-email and forget-password, and frontend domain.
 
 
-```
-i have product management apis. admin can add,update,delete products and their images "each product can have multiple images" and products size and weights and products colors and thier colors image varaint "each color has 1 image". i have tried to do some of the frontend, so firstly the admin will enter basic product info like name, description, price "i have did this", but then after the product is created, he should be redirected to "update product page" which inside of it we can do more things in the product. there should be section for adding and deleting product images, the images order matters so try to find a way to represent the images order "there is api for update the order of product images" then there should be section to add size, so he press on + or add size which shows Modal/Modal Window we should enter the size that we want to add "this can be list of valid sizes or any proper solution you see" and the weight of this size. and there should be section for adding color variants when admin try to add new color a Modal/Modal Window shows up, admin should enter color name, and color hex "Color Picker, find nice way to do it". then after press add there should be table that show the color name and hex and color image, inside this table we will be able to change the color image we can add or delete it, for both color and size variant there should be  Toggle Switch, which update the variant status between enable and disable. read ProductCommandService.cs and ProductCommandController.cs for full understanding
-```
 
 ```
-For collections. they can have the same displayOrder, when that happen we start to display based on name of collection.
-I have added also maintenance mode, which block users from checkout, or proceed in payment flow, so when we this mode is enabled i should show to users that the website is currently under maintenance.
+I have added also maintenance mode, which block users from checkout, or proceed in payment flow, so when this mode is enabled i should show to users that the website is currently under maintenance.
 ```
 
 ```
 While user is putting his shipping address and billing address, i want to put switch that user will toggle if the billing address is not as shipping address when that happen there will be the default address of the user and "Choose another address" which user can choose from his address catalog and there should be button to add another address. This structure of having default address then address list should be also in shipping address.
 ```
 
+---
+
+## TODO
+- [ ] Show the rest order informations like shipping fees, total fees. etc.
+- [ ] Redirect user after verify email
+- [ ] password weak
+- [ ] When remove item from cart, the cart counter doesn't get updated unless we refresh the page.
+- [ ] Interactions after deleting product, size variant, color variant.
+- [x] Edit product show page, its looking bad.
+- [x] Add Collection Editing to overview in admin panel.
+- [x] Trim whitespaces. Let add, update functions set the first character as capital letter.
+- [x] working on dark mode (front end )
+- [x] gradinat of the main image.
+- [x] fix add sizing.
+- [x] Search by order ID.
+- [x] Edit "sort by" in the shop for products.
+- [x] Stock.
+- [x] Cascade deleting size or color to stock.
+- [x] **Code** in product.
+- [x] Edit order details to accept **Code** information.
+- [x] Refund, Cancel order interaction.
+- [x] Add validation limit number of cart items.
+- [x] Check Re-cart items.
+	- Make redirection to the user for the product page, or shop.
+- [x] Add product thumbnail image property to normal users. `Ask abdo`
+- [x] Test when 2 users try to buy the same thing and it gets out of stock.
+- [x] Add `Order.Status == RequireReview` in `ChangeOrderStatus` method
+- [x] Order a product then do successfull payment while the paymob can't call our system backwards, and wait until the system makes the order expired.
+- [x] Add logs
+- [x] Add SKU in payment order intention.
+- [x] remove header in product detail page.
+- [x] first name and last name of address should be removed.
+- [x] Make the Product images smaller "less zoom".
+- [x] Any order stay authorized more than 2 weeks should be cancelled.
+- [x] Add losses in order operations service.
+
+### Shipment
+- [x] Partial return. What if the user want to return some of the order, not the whole of it.
+	- We can make workaround by implementing delete order item. and make this process as manual. 
+- [ ] Remove Cancel order button from orders table. and make all the uncommon operations in order details page.
+	- **Remove** `Cancel Order` from `completed` orders, so it should call `partial return` function.
+- [ ] Add user cancel order if its not shipped yet.
+- [ ] When we do return/exchange order, reveal panel to choose the pickupAddress. "Because the current shipping address maynot have pickup availability."
+- [ ] Bosta isolates the **Extra COD Fee (80 EGP)** because, legally, cash-handling services are subject to a 14% VAT in Egypt ($80 \times 1.14 = 91.2\text{ EGP}$). Depending on your specific corporate contract with Bosta, the final `shippingFee` (564 EGP) might **not** include that extra $11.2\text{ EGP}$ VAT difference, as they often accumulate VAT and bill it to you on your weekly or monthly invoice.
+- [ ] add rule for not exceding 30000 EGP.
+- [ ] Packaging
+	- Make it hybrid, some items are Flexible and some are Rigid. if its rigid you should specify the L X W X H otherwise you can use the volume to determine the left space.
+
+
+
+---
+
+## Issues
+- [x] Pressing "All Collections" after specifing a collection doesn't work. "In the drop down menu in navbar"
+- [x] Adding address is corrupted.
+- [x] Wrong product status when update or delete variants.
+- [ ] when deleting thumbnail image, we need to refresh the page to see the new thumbnail image.
+- [x] Failing to connect to claudeFlare make data unconsistante. which doesn't create `transaction` for `order`.
+- [x] Delete Color id and size id, issue relation with orderItem.
+- [x] Change product images order doesn't get updated in UI.
+- [x] Error in changing collection image.
+- [ ] Strict validaiton on orderimages of product.
+- [ ] Wrong passwrod
+- [ ] grades-leather-saw-epson.trycloudflare.com, right backend faces.`frontend/build/static/js/main.04..., frontend/src/config.js`
+- [ ] When do exchange, if we want to add another item with size and color variant the already exists in the order before. "Currently we create new order item. We should reuse the created one."
+- [ ] Don't forget pickupAvailability, dropOffAvailability of bosta.
+
+---
+## Questions
+
+1. What shall we do with `Require Check` state?
+	- For now we will create endpoint to accept or refund the order.
+2. Does paymob send that the user failed to pay or they only communicate with us when we do successfull transaction?
+	- Yes it does, it sends back a feedback about the transaction payment status in both cases of failing and successful payment. 
+	- If we didn't create intention then we try to query paymob about transaction using `intention_order_id` it will say `Order Not Found` but if we have created intention it will say `Transaction Not Found"`.
+3. bosta
+	- How can i predict the order size, and cost. 
+		- For packaging do we use size or weight.
+		- For cost predication is there any endpoint can i reach to compute the cost, or should i calculate it internally.
+			- City or distinct
+		- the size of the product can be varaint and it doesn't have fixed size because its a clothes
+		-  What should i do if there is one big order which i can't fit in single box.
+	- How to create CRP. And what is the flow?
+		- `Pickup -> Delivered -> returned`. what actually those mean.
+	- How to create Exchagne Request
+		- And is there any packaging for the returned items ?
+		- `exchange forward -> customer -> return to business`.
+	- How to know the status of a shipping
+	- is there 3 trials for each shippment? and if so, does the same shipping id will be rto or they create new rto.
+		- how to know the rto fees, how much should pay.
+	- How to terminate an order.
+	- Flex shipping
+	- what bosta do if the package specs doesn't meet with what we claim like package type
+		- do they send message that this order will get more fees in shipping because of that
+		- Or do they just take the money from the wallet without notificationl
+
+---
+## Concerncs
+- Limit number of orders for each user per day. 
 
 ```
-I have added search for user by email function which will be used by admin to search for guessing the user email, after he find the right user, we will display the orders of this user only. don't trigger this API call on _every single keystroke_. Implement a **debounce** of about 300ms. This waits until the admin pauses typing before hammering your database with requests.
+my current paymob integration is bad, and i want to integrate my application with bosta for shipping. the full flow of order is not sufficient. "currently the system doesn't use Authorize payments from customers which is bad because now if customer try to cancel order while its confirmed 'not shipped' he will pay fees".
+
+rewrite paymob integration. 
+and create bosta shipping integration
+
+we support only cash on delivary or credit card using paymob and user pays paymob fees.
+for COD, order will be confirmed and the user can cancel it while its not shipped. then we can make order shipped. if user didn't recieve the order "after the 3 trials from bosta" we will make it cancelled and put Losses in order the RTO "we will pay the RTO"
+if user saw the order but didn't accept taken it. he will pay the shipping fee and we will make order returned. if he accept it we make order completed, now if user want to return the order. if user didn't answer the shipping courier after rto request, we will pay the rto "in losses" and keep the order completed. if he answered, he will pay RTO and we will make the order returned. 
+"always keep admin able to put losses in orders"
+
+but for credit card. order will be confirmed if we are able to authroize the payment amount from user. user can cancel order while its confiremd "without paying paymob fees" then make it cancelled. otherwise when we want to start ship we need to capture money then start shipping. if user didn't recieve order from bosta. the order is cancelled and we refund the user but we take from him RTO fees. if he recieved then its completed. then if he want to return and user didn't answer the shipping courier we will pay RTO "put in losses" and keep order as completed. if he answered, then we will refund him but we will take the rto amount and make order returned
 ```
 
+---
+
 ```
-I have added reorder function, PutOrderInCart in ~/api/user/{userId}/order/{OrderId}/reorder which add order products in cart and the frontend should redirect user to cart. Admin may have made changes in database so for some products users won't be able to reorder, so if that happen i want to show for users after redirection a small notification message that says some order aren't avaible.
+Select Sum(Quantity)
 ```

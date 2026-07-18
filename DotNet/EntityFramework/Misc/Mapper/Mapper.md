@@ -34,7 +34,8 @@ public class ProfileAddressMapper : Profile
 ### Ignore null values
 - Note that `bool?` is actually an object that has property that may point at null. so `srcMember != null` alone will fail
 ```csharp
-// This work in update dto, but it will do unwanted includes if you used it in Projection<>
+// 1. This work in update dto, but it will do unwanted includes if you used it in Projection<>
+// 2. Don't use this in output dtos, use it only with update dtos.
 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => 
 	src.GetType().GetProperty(opts.DestinationMember.Name)?.GetValue(src) != null));
 
